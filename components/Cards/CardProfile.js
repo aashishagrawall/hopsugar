@@ -1,8 +1,14 @@
 import React from "react";
+import {
+  useSession, signIn, signOut
+} from 'next-auth/client'
+
 
 // components
 
 export default function CardProfile() {
+
+  const [ session, loading ] = useSession()
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
@@ -12,7 +18,7 @@ export default function CardProfile() {
               <div className="relative">
                 <img
                   alt="..."
-                  src={require("assets/img/team-2-800x800.jpg")}
+                  src={session &&session.user.image}
                   className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
                 />
               </div>

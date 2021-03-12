@@ -15,7 +15,7 @@ const options = {
         })
     ],
 
-    database:process.env.DATABASE
+    database:process.env.MONGODB_URI
 }
 
 export default (req, res) => NextAuth(req, res, options)

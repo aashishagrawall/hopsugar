@@ -16,7 +16,6 @@ export default function Login() {
 
   if(session){
     router.push('/admin/profile')
-    
 
   }
   

@@ -1,4 +1,4 @@
 GOOGLE_ID=544971568191-u2pmq4f8rfc6og4tike6vbrk7ulnpv1r.apps.googleusercontent.com
 GOOGLE_SECRET=9Bj2L-YvsIk_zQ_dp6p_3D54
 NEXTAUTH_URL=http://localhost:3000
-DATABASE=mongodb://127.0.0.1:27017/hopsugar
+MONGODB_URI=mongodb+srv://aashish:aashish@cluster0.q9qjm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
