@@ -12,7 +12,7 @@ const userSchema = new Schema({
         trim: true,
         unique: true
     },
-    profilPic: {
+    image: {
         type: String,
         required: false
     },
@@ -22,51 +22,74 @@ const userSchema = new Schema({
     roles: {
         type: [{
             type: String,
-            enum: ['daddy', 'needy']
+            enum: ['daddy', 'baby']
         }],
         default: ['daddy'],
         required: 'Please provide at least one role'
     },
-    gender:{
-        type:String,
-        enum:["male","female"]
+    gender: {
+        type: String,
+        enum: ["male", "female"]
     },
-    location:{
-        loc:{type: "Point", coordinates: [Number]}
+    location: {
+        loc: {
+            type: [Number],
+            index: '2dsphere'
+        },
+        city: {
+            type: String,
+            default: '',
+            lowercase: true,
+            trim: true
+        },
+
+        state: {
+            type: String,
+            default: '',
+            lowercase: true,
+            trim: true
+        },
+        pincode: {
+            type: String,
+            default: ''
+        },
+        address: {
+            type: String
+        },
     },
-    age:{
-        type:Number
+    age: {
+        type: Number
     },
-    occupation:{
-        type:String
+    occupation: {
+        type: String
     },
-    education:{
-        type:String
+    education: {
+        type: String
     },
-    body_type:{
-        type:String
+    body_type: {
+        type: String
     },
-    smokes:{
-        type:String
+    smokes: {
+        type: String
     },
-    drinks:{
-        type:String
+    drinks: {
+        type: String
     },
-    children:{
-        type:String
+    children: {
+        type: String
     },
-    height:{
-        type:Number
+    height: {
+        type: Number
     },
-    ethnicity:{
-        type:String,
+    ethnicity: {
+        type: String,
     },
-    about_me:{
-        type:String
+    about_me: {
+        type: String
     },
-    photos:{
-        private:[],   
-        public:[]
+    photos: {
+        private: [],
+        public: []
     }
 
 

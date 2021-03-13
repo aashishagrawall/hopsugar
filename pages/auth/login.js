@@ -15,6 +15,7 @@ export default function Login() {
   const router = useRouter()
 
   if(session){
+    console.log("session",session);
     router.push('/admin/profile')
 
   }
