@@ -6,6 +6,7 @@ import CardSettings from "components/Cards/CardSettings.js";
 import CardProfile from "components/Cards/CardProfile.js";
 import dbConnect from '../../utils/dbConnect'
 import User from '../../models/User'
+import { useRouter } from 'next/router'
 
 // layout for page
 import {
@@ -18,11 +19,12 @@ import Admin from "layouts/Admin.js";
 export default function Settings({user}) {
 
   const [ session, loading ] = useSession()
+  const router = useRouter()
   if(loading) return null;
 
 
   if(!session){
- //   router.push('/auth/login')
+ router.push('/auth/login')
     
   }
   console.log("user",user);
