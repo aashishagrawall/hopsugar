@@ -6,6 +6,12 @@ const userSchema = new Schema({
     name: {
         type: String
     },
+    firstName:{
+        type:String
+    },
+    lastName:{
+        type:String
+    },
     email: {
         type: String,
         required: true,
@@ -26,6 +32,10 @@ const userSchema = new Schema({
         }],
         default: ['daddy'],
         required: 'Please provide at least one role'
+    },
+    phone_number:{
+        type:Number,
+        
     },
     gender: {
         type: String,
@@ -88,8 +98,37 @@ const userSchema = new Schema({
         type: String
     },
     photos: {
-        private: [],
-        public: []
+        private: [
+            {
+                location:{
+                    type:String
+                },
+                is_primary:{
+                    type:Boolean
+                },
+                display:{
+                    type:Boolean,
+                    default:true
+                }
+
+            }
+        ],
+        public: [
+            {
+                location:{
+                    type:String
+                },
+                is_primary:{
+                    type:Boolean
+                },
+                display:{
+                    type:Boolean,
+                    default:true
+                }
+
+            }
+
+        ]
     }
 
 
